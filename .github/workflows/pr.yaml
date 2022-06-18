@@ -7,14 +7,14 @@ on:
 
 name: "Validate PR"
 jobs:
-  cancel-previous-run:
-    name: Cancel previous actions
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: n1hility/cancel-previous-runs@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+  # cancel-previous-run:
+  #   name: Cancel previous actions
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - uses: n1hility/cancel-previous-runs@v2
+  #       with:
+  #         token: ${{ secrets.GITHUB_TOKEN }}
 
   validate-pr:
     name: Validate PR title
