@@ -57,4 +57,4 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           test-script: pnpm ci:test:coverage
-          skip-step: install
+          skip-step: all
