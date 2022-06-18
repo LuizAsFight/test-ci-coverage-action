@@ -51,10 +51,13 @@ jobs:
           version: 7.0.0
           run_install: true
 
+      # - name: Run Test Coverage
+      # #   run: pnpm ci:test:coverage
+      #   uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.6
+      #   with:
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Run Test Coverage
-      #   run: pnpm ci:test:coverage
-        uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.6
+        uses: raulanatol/jest-coverage-comment-action@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          test-script: pnpm ci:test:coverage
-          skip-step: all
