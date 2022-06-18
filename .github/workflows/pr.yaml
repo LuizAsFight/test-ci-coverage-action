@@ -57,3 +57,4 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           test-script: npx run jest --runInBand
+          skip-step: install
