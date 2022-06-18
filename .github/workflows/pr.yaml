@@ -7,14 +7,14 @@ on:
 
 name: "Validate PR"
 jobs:
-  cancel-previous-run:
-    name: Cancel previous actions
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: n1hility/cancel-previous-runs@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+  # cancel-previous-run:
+  #   name: Cancel previous actions
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - uses: n1hility/cancel-previous-runs@v2
+  #       with:
+  #         token: ${{ secrets.GITHUB_TOKEN }}
 
   validate-pr:
     name: Validate PR title
@@ -52,4 +52,7 @@ jobs:
           run_install: true
 
       - name: Run Test Coverage
-        run: pnpm ci:test:coverage
+      #   run: pnpm ci:test:coverage
+        uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.6
+          with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
