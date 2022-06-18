@@ -52,4 +52,7 @@ jobs:
           run_install: true
 
       - name: Run Test Coverage
-        run: pnpm ci:test:coverage
+      #   run: pnpm ci:test:coverage
+        uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.6
+          with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
