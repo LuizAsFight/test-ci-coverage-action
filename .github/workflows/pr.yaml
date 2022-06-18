@@ -54,5 +54,5 @@ jobs:
       - name: Run Test Coverage
       #   run: pnpm ci:test:coverage
         uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.6
-          with:
+        with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
