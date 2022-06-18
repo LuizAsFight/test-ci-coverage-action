@@ -56,5 +56,5 @@ jobs:
         uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          test-script: npx run jest --runInBand
+          test-script: pnpm ci:test:coverage
           skip-step: install

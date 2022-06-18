@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "ci:test:coverage": "jest --silent --ci --coverage --runInBand"
+    "ci:test:coverage": "jest --ci --json --coverage --testLocationInResults --outputFile=report.json --runInBand"
   },
   "devDependencies": {
     "@jest/types": "28.1.0",
