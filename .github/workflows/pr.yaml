@@ -60,5 +60,5 @@ jobs:
       - name: Run Test Coverage
         uses: raulanatol/jest-coverage-comment-action@main
         with:
-          jest-command: 'pnpm run ci:test:coverage'
+          # jest-command: 'pnpm run ci:test:coverage'
           github-token: ${{ secrets.GITHUB_TOKEN }}
