@@ -57,6 +57,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           skip-step: install
           test-script: pnpm run ci:test:coverage
+          package-manager: pnpm
 
       # - name: raulanatol Run Test Coverage
       #   uses: raulanatol/jest-coverage-comment-action@main
