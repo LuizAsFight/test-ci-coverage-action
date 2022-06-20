@@ -51,13 +51,20 @@ jobs:
           version: 7.0.0
           run_install: true
 
-      - name: ArtiomTr Run Test Coverage
-        uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.6
+      - name: Run Tests
+        run: pnpm ci:test:romeovs
+
+      - name: Coverage Report
+        uses: romeovs/lcov-reporter-action@v0.2.16
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          skip-step: install
-          test-script: pnpm run ci:test:coverage
-          package-manager: pnpm
+          title: Coverage Report
+          delete-old-comments: true
+      # - name: ArtiomTr Run Test Coverage
+      #   uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.6
+      #   with:
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
+      #     skip-step: install
+      #     test-script: pnpm run ci:test:artion
 
       # - name: raulanatol Run Test Coverage
       #   uses: raulanatol/jest-coverage-comment-action@main
