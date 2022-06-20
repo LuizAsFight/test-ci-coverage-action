@@ -56,6 +56,7 @@ jobs:
         uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          skip-step: install
 
       # - name: raulanatol Run Test Coverage
       #   uses: raulanatol/jest-coverage-comment-action@main
