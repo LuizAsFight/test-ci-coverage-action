@@ -12,10 +12,10 @@ jobs:
   validate-pr:
     name: Validate PR title
     runs-on: ubuntu-latest
-    if: ${{ env.IS_PR }}
     steps:
       - name: Pull request title check
         uses: amannn/action-semantic-pull-request@v4
+        if: ${{ env.IS_PR }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
