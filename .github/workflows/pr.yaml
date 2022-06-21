@@ -6,6 +6,8 @@ on:
     types: [opened, reopened, synchronize, ready_for_review, edited]
 
 name: "Validate PR"
+# env:
+#   IS_PR: ${{ github.event_name == 'pull_request' }}
 jobs:
   cancel-previous-run:
     name: Cancel previous actions
