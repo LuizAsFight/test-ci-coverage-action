@@ -19,6 +19,7 @@ jobs:
   validate-pr:
     name: Validate PR title
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request' }}
     steps:
       - name: Pull request title check
         uses: amannn/action-semantic-pull-request@v4
@@ -51,5 +52,13 @@ jobs:
           version: 7.0.0
           run_install: true
 
-      - name: Run Test Coverage
-        run: pnpm ci:test:coverage
+      - name: Run Tests
+        run: pnpm ci:test:romeovs
+
+      - name: Coverage Report
+        uses: romeovs/lcov-reporter-action@v0.2.16
+        if: ${{ github.event_name == 'pull_request' }}
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          title: Coverage Report
+          delete-old-comments: true
